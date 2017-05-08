@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.css';
-import WeatherDisplay from './WeatherDisplay'
+import "bootswatch/journal/bootstrap.css";
+import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
+
+// Components
+import AlertMessage from './AlertMessage';
+import WeatherDisplay from './WeatherDisplay';
 
 const PLACES = [
 	{ name: "Amsterdam", zip: "1012NX" },
@@ -21,21 +24,47 @@ class App extends Component {
 	  const activePlace = this.state.activePlace;
 	  return (
       <div className="App">
-	      {PLACES.map((place, index) => (
-		      <button
-			      key={index}
-			      onClick={() => {
-				      this.setState({ activePlace: index });
-			      }}
-		      >
-			      {place.name}
-		      </button>
-	      ))}
-	      <WeatherDisplay
-		      key={activePlace}
-		      zip={PLACES[activePlace].zip}
-	      />
-	      <div>*Because of http source atapi.openweathermap.org you could allow to load resources from unsecure places to let the WeatherApp work.</div>
+	      <div>
+		      <Navbar>
+			      <Navbar.Header>
+				      <Navbar.Brand>
+					     Weather App
+				      </Navbar.Brand>
+			      </Navbar.Header>
+		      </Navbar>
+		      <Grid>
+			      <Row>
+				      <Col md={4} sm={4}>
+					      <h3>Select a city</h3>
+					      <Nav
+						      bsStyle="pills"
+						      stacked
+						      activeKey={activePlace}
+						      onSelect={index => {
+							      this.setState({ activePlace: index });
+						      }}
+					      >
+						      {PLACES.map((place, index) => (
+							      <NavItem
+								      key={index}
+								      eventKey={index}
+							      >{place.name}</NavItem>
+						      ))}
+					      </Nav>
+				      </Col>
+				      <Col md={8} sm={8}>
+					      <WeatherDisplay
+						      key={activePlace}
+						      zip={PLACES[activePlace].zip} />
+				      </Col>
+			      </Row>
+			      <Row>
+				      <Col md={12}>
+					      <AlertMessage />
+				      </Col>
+			      </Row>
+		      </Grid>
+	      </div>
       </div>
     );
   }
