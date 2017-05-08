@@ -4,7 +4,7 @@ import './App.css';
 import WeatherDisplay from './WeatherDisplay'
 
 const PLACES = [
-	{ name: "Palo Alto", zip: "94303" },
+	{ name: "Amsterdam", zip: "1012NX" },
 	{ name: "San Jose", zip: "94088" },
 	{ name: "Santa Cruz", zip: "95062" },
 	{ name: "Honolulu", zip: "96803" }
@@ -17,10 +17,10 @@ class App extends Component {
 			activePlace: 0,
 		};
 	}
-  render() {
-    return (
+	render() {
+	  const activePlace = this.state.activePlace;
+	  return (
       <div className="App">
-
 	      {PLACES.map((place, index) => (
 		      <button
 			      key={index}
@@ -31,7 +31,11 @@ class App extends Component {
 			      {place.name}
 		      </button>
 	      ))}
-	      <WeatherDisplay zip={"12345"}/>
+	      <WeatherDisplay
+		      key={activePlace}
+		      zip={PLACES[activePlace].zip}
+	      />
+
 
       </div>
     );
