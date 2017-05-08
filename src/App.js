@@ -9,6 +9,7 @@ import WeatherDisplay from './WeatherDisplay';
 const PLACES = [
 	{ name: "Amsterdam", zip: "1012NX" },
 	{ name: "Moscow", zip: "117405" },
+	{ name: "Kiev", zip: "01001" },
 	{ name: "Prague", zip: "100 00" },
 	{ name: "Santa Cruz", zip: "95062" },
 	{ name: "Honolulu", zip: "96803" }
