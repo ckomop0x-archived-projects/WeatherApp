@@ -20,9 +20,7 @@ class WeatherDisplay extends Component {
 		const weatherData = this.state.weatherData;
 		if ( !weatherData ) {
 			return (
-			<div>
 				<div>Loading<sup>*</sup></div>
-			</div>
 			);
 		} else { const weather = weatherData.weather[0];
 			const iconUrl = "http://openweathermap.org/img/w/" + weather.icon + ".png";
