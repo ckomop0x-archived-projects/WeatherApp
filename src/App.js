@@ -8,7 +8,8 @@ import WeatherDisplay from './WeatherDisplay';
 
 const PLACES = [
 	{ name: "Amsterdam", zip: "1012NX" },
-	{ name: "San Jose", zip: "94088" },
+	{ name: "Moscow", zip: "117405" },
+	{ name: "Prague", zip: "100 00" },
 	{ name: "Santa Cruz", zip: "95062" },
 	{ name: "Honolulu", zip: "96803" }
 ];
@@ -58,8 +59,6 @@ class App extends Component {
 						      zip={PLACES[activePlace].zip} />
 				      </Col>
 			      </Row>
-			      <Row><Col md={12}><AlertMessage /></Col></Row>
-
 		      </Grid>
 	      </div>
       </div>
