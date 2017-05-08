@@ -25,7 +25,7 @@ class App extends Component {
 		      <button
 			      key={index}
 			      onClick={() => {
-				      console.log('Clicked index '+index);
+				      this.setState({ activePlace: index });
 			      }}
 		      >
 			      {place.name}
@@ -35,8 +35,6 @@ class App extends Component {
 		      key={activePlace}
 		      zip={PLACES[activePlace].zip}
 	      />
-
-
       </div>
     );
   }
