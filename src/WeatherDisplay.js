@@ -9,7 +9,7 @@ class WeatherDisplay extends Component {
 	}
 	componentDidMount() {
 		const zip = this.props.zip;
-		const URL =`https://api.openweathermap.org/data/2.5/weather?q="${zip}&appid=b1b35bba8b434a28a0be2a3e1071ae5b&units=imperial`;
+		const URL =`https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?q="${zip}&appid=b1b35bba8b434a28a0be2a3e1071ae5b&units=imperial`;
 		fetch(URL)
 			.then(res => res.json())
 			.then(json => {
@@ -21,7 +21,7 @@ class WeatherDisplay extends Component {
 		if ( !weatherData ) {
 			return <div>Loading</div>;
 		} else { const weather = weatherData.weather[0];
-			const iconUrl = "https://openweathermap.org/img/w/" + weather.icon + ".png";
+			const iconUrl = "http://openweathermap.org/img/w/" + weather.icon + ".png";
 			return (
 				<div>
 					<h1>
