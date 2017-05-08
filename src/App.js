@@ -58,7 +58,7 @@ class App extends Component {
 						      zip={PLACES[activePlace].zip} />
 				      </Col>
 			      </Row>
-			      {<WeatherDisplay/> === <div>Loading<sup>*</sup></div> ? <Row><Col md={12}><AlertMessage /></Col></Row> : ''}
+			      <Row><Col md={12}><AlertMessage /></Col></Row>
 
 		      </Grid>
 	      </div>
