@@ -35,6 +35,7 @@ class App extends Component {
 		      key={activePlace}
 		      zip={PLACES[activePlace].zip}
 	      />
+	      <div>*Because of http source atapi.openweathermap.org you could allow to load resources from unsecure places to let the WeatherApp work.</div>
       </div>
     );
   }
