@@ -58,11 +58,8 @@ class App extends Component {
 						      zip={PLACES[activePlace].zip} />
 				      </Col>
 			      </Row>
-			      <Row>
-				      <Col md={12}>
-					      <AlertMessage />
-				      </Col>
-			      </Row>
+			      {<WeatherDisplay/> === '<div>Loading<sup>*</sup></div>' ? <Row><Col md={12}><AlertMessage /></Col></Row> : ''}
+
 		      </Grid>
 	      </div>
       </div>

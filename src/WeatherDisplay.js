@@ -21,7 +21,7 @@ class WeatherDisplay extends Component {
 		if ( !weatherData ) {
 			return (
 			<div>
-				<div>Loading*</div>
+				<div>Loading<sup>*</sup></div>
 			</div>
 			);
 		} else { const weather = weatherData.weather[0];
