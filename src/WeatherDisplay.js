@@ -7,23 +7,28 @@ class WeatherDisplay extends Component {
 			weatherData: null
 		};
 	}
+
 	componentDidMount() {
-		const zip = this.props.zip;
-		const URL =`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${zip}&appid=b1b35bba8b434a28a0be2a3e1071ae5b&units=metric`;
+		const {name} = this.props;
+		const URL =`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${name}&appid=b1b35bba8b434a28a0be2a3e1071ae5b&units=metric`;
+
 		fetch(URL)
 			.then(res => res.json())
 			.then(json => {
 				this.setState({ weatherData: json });
 		});
 	}
+
 	render() {
 		const weatherData = this.state.weatherData;
+
 		if ( !weatherData ) {
 			return (
 				<div>Loading<sup>*</sup></div>
 			);
 		} else { const weather = weatherData.weather[0];
 			const iconUrl = "http://openweathermap.org/img/w/" + weather.icon + ".png";
+
 			return (
 				<div>
 					<h1>

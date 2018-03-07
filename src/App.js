@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import "bootswatch/journal/bootstrap.css";
 import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
-
-// Components
-import AlertMessage from './AlertMessage';
 import WeatherDisplay from './WeatherDisplay';
 
 const PLACES = [
-	{ name: "Amsterdam", zip: "1012NX" },
-	{ name: "Moscow", zip: "117405" },
-	{ name: "Kiev", zip: "01001" },
-	{ name: "Prague", zip: "100 00" },
-	{ name: "Santa Cruz", zip: "95062" },
-	{ name: "Honolulu", zip: "96803" }
+	{ name: "Amsterdam"},
+	{ name: "Moscow"},
+	{ name: "Kiev"},
+	{ name: "Uzhhorod"},
+	{ name: "Prague"},
+	{ name: "Santa Cruz"},
+	{ name: "Honolulu"}
 ];
 
 class App extends Component {
@@ -22,8 +20,10 @@ class App extends Component {
 			activePlace: 0,
 		};
 	}
+
 	render() {
 	  const activePlace = this.state.activePlace;
+
 	  return (
       <div className="App">
 	      <div>
@@ -57,7 +57,7 @@ class App extends Component {
 				      <Col md={8} sm={8}>
 					      <WeatherDisplay
 						      key={activePlace}
-						      zip={PLACES[activePlace].zip} />
+						      name={PLACES[activePlace].name} />
 				      </Col>
 			      </Row>
 		      </Grid>
