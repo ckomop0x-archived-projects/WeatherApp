@@ -29,9 +29,7 @@ class App extends Component {
 	      <div>
 		      <Navbar>
 			      <Navbar.Header>
-				      <Navbar.Brand>
-					     Weather App
-				      </Navbar.Brand>
+				      <Navbar.Brand>Weather Around the World</Navbar.Brand>
 			      </Navbar.Header>
 		      </Navbar>
 		      <Grid>
