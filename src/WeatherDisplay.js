@@ -1,48 +1,66 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {urlMaker} from './services/url-maker';
 
 class WeatherDisplay extends Component {
-	constructor() {
-		super();
-		this.state = {
-			weatherData: null
-		};
-	}
+    constructor (props) {
+        super(props);
+        this.state = {
+            weatherData: null,
+            city: this.props.city
+        };
+    }
 
-	componentDidMount() {
-		const {name} = this.props;
-		const URL =`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=b1b35bba8b434a28a0be2a3e1071ae5b&units=metric`;
+    componentDidMount () {
+        this.loadWeather(this.props.city);
+    }
 
-		fetch(URL)
-			.then(res => res.json())
-			.then(json => {
-				this.setState({ weatherData: json });
-		});
-	}
+    loadWeather (city) {
+        fetch(urlMaker(city))
+            .then(res => res.json())
+            .then(json => {
+                this.setState({weatherData: json});
+            });
+    }
 
-	render() {
-		const weatherData = this.state.weatherData;
+    componentWillReceiveProps (newProps, newState) {
+        if (newProps.city !== this.state.city) {
+            this.setState({city: newProps.city})
+            this.loadWeather(newProps.city);
+        }
+    }
 
-		if ( !weatherData ) {
-			return (
-				<div>Loading<sup>*</sup></div>
-			);
-		} else { const weather = weatherData.weather[0];
-			const iconUrl = "http://openweathermap.org/img/w/" + weather.icon + ".png";
+    render () {
+        const {weatherData} = this.state;
 
-			return (
-				<div>
-					<h1>
-						{weather.main} in {weatherData.name}
-						<img src={iconUrl} alt={weatherData.description} />
-					</h1>
-					<p>Current: {weatherData.main.temp}°</p>
-					<p>High: {weatherData.main.temp_max}°</p>
-					<p>Low: {weatherData.main.temp_min}°</p>
-					<p>Wind Speed: {weatherData.wind.speed} mi/hr</p>
-				</div>
-			);
-		}
-	}
+        if (!weatherData) {
+            return (
+                <div>Loading<sup>*</sup></div>
+            );
+        } else {
+            const weather = weatherData.weather[0];
+            const iconUrl = 'http://openweathermap.org/img/w/' + weather.icon + '.png';
+
+            return (
+                <div>
+                    <div className="card" style={{width: 400, marginTop: 32}}>
+                        {/*<img className="card-img-top" src="https://funtime.kiev.ua/uploads/img/gallery/big/2016/10/uzhgorod-uzhgorod-ukraina-uzhgorodskij-zamok-uzhgorodskaya-oblast-uzhgorod-dostoprimechatelnosti-uzh-57fb1d4ceb34d.jpg"*/}
+                             {/*alt={weatherData.name} />*/}
+                            <div className="card-body">
+                                <h5 className="card-title">{weatherData.name}</h5>
+                                <p className="card-text">{weather.main} <img src={iconUrl} alt={weatherData.description}/></p>
+                            </div>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">Current: {weatherData.main.temp}°</li>
+                                <li className="list-group-item">High: {weatherData.main.temp_max}°</li>
+                                <li className="list-group-item">Low: {weatherData.main.temp_min}°</li>
+                                <li className="list-group-item">Low: {weatherData.main.temp_min}°</li>
+                                <li className="list-group-item">Wind Speed: {weatherData.wind.speed} mi/hr</li>
+                            </ul>
+                    </div>
+                </div>
+            );
+        }
+    }
 }
 
 export default WeatherDisplay;

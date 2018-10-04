@@ -1,68 +1,55 @@
-import React, { Component } from 'react';
-import "bootswatch/journal/bootstrap.css";
-import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
-import WeatherDisplay from './WeatherDisplay';
+import React from 'react';
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import {Navbar, Col, Button} from 'react-bootstrap';
+import {PLACES} from './helpers/places';
+import Home from './Home';
 
-const PLACES = [
-	{ name: "Amsterdam"},
-	{ name: "Moscow"},
-	{ name: "Kiev"},
-	{ name: "Uzhhorod"},
-	{ name: "Prague"},
-	{ name: "Santa Cruz"},
-	{ name: "Honolulu"}
-];
+const App = () => {
+    return (
+        <Router>
+            <div>
+                <Navbar>
+                    <div className="container">
+                        <Navbar.Header>
+                            <Navbar.Brand>
+                                <Link to="/">
+                                    Weather Around the World
+                                </Link>
+                            </Navbar.Brand>
+                        </Navbar.Header>
+                    </div>
+                </Navbar>
+                <div className="container">
+                    <Col md={12}>
+                        <h3>Select a city</h3>
+                    </Col>
+                    <Col md={12}>
+                        <div className="btn-group" role="group" aria-label="Basic example">
+                            {PLACES.map((place, index) => {
+                                return (
+                                    <Button type="button" className="btn btn-light" key={index}>
+                                        <Link key={index} to={`/${ place.name }`}>
+                                            {place.name}
+                                        </Link>
+                                    </Button>
 
-class App extends Component {
-	constructor() {
-		super();
-		this.state = {
-			activePlace: 0,
-		};
-	}
+                                )
+                            })}
+                        </div>
+                    </Col>
+                    <Switch>
+                        <Route exact path="/" render={() => <Home city='amsterdam'/>}/>
+                        <Route path="/:city" render={({match}) => {
+                            const {city} = match.params;
+                            console.log(city);
 
-	render() {
-	  const activePlace = this.state.activePlace;
-
-	  return (
-      <div className="App">
-	      <div>
-		      <Navbar>
-			      <Navbar.Header>
-				      <Navbar.Brand>Weather Around the World</Navbar.Brand>
-			      </Navbar.Header>
-		      </Navbar>
-		      <Grid>
-			      <Row>
-				      <Col md={4} sm={4}>
-					      <h3>Select a city</h3>
-					      <Nav
-						      bsStyle="pills"
-						      stacked
-						      activeKey={activePlace}
-						      onSelect={index => {
-							      this.setState({ activePlace: index });
-						      }}
-					      >
-						      {PLACES.map((place, index) => (
-							      <NavItem
-								      key={index}
-								      eventKey={index}
-							      >{place.name}</NavItem>
-						      ))}
-					      </Nav>
-				      </Col>
-				      <Col md={8} sm={8}>
-					      <WeatherDisplay
-						      key={activePlace}
-						      name={PLACES[activePlace].name} />
-				      </Col>
-			      </Row>
-		      </Grid>
-	      </div>
-      </div>
+                            return <Home city={city}/>
+                        }}/>
+                    </Switch>
+                </div>
+            </div>
+        </Router>
     );
-  }
-}
+};
 
 export default App;
