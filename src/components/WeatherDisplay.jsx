@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {urlMaker} from './services/url-maker';
+import {urlMaker} from '../services/url-maker';
 
 class WeatherDisplay extends Component {
     constructor (props) {
         super(props);
         this.state = {
             weatherData: null,
-            city: this.props.city
+            city: this.props.city || 'amsterdam'
         };
     }
 
@@ -22,7 +22,7 @@ class WeatherDisplay extends Component {
             });
     }
 
-    componentWillReceiveProps (newProps, newState) {
+    componentWillReceiveProps (newProps) {
         if (newProps.city !== this.state.city) {
             this.setState({city: newProps.city})
             this.loadWeather(newProps.city);
@@ -52,7 +52,6 @@ class WeatherDisplay extends Component {
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">Current: {weatherData.main.temp}°</li>
                                 <li className="list-group-item">High: {weatherData.main.temp_max}°</li>
-                                <li className="list-group-item">Low: {weatherData.main.temp_min}°</li>
                                 <li className="list-group-item">Low: {weatherData.main.temp_min}°</li>
                                 <li className="list-group-item">Wind Speed: {weatherData.wind.speed} mi/hr</li>
                             </ul>

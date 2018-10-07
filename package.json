@@ -1,23 +1,36 @@
 {
   "name": "weather",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "homepage": "https://ckomop0x.github.io/WeatherApp/",
   "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.6.0",
+    "react-addons-test-utils": "^15.6.2",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.0.4"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "bootswatch": "^3.3.7",
-    "react": "^15.5.4",
-    "react-bootstrap": "^0.32.4",
-    "react-dom": "^15.5.4"
+    "bootstrap": "^4.1.3",
+    "bootswatch": "^4.1.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-test-renderer": "^16.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom --coverage --watchAll",
+    "eject": "react-scripts eject",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ]
   },
   "browserslist": [
     ">0.2%",

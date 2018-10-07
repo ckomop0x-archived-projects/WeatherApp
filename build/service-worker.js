@@ -11,10 +11,10 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js');
 
 importScripts(
-  "/WeatherApp/precache-manifest.7a4ddeabf59f022db7cc1b8f76540703.js"
+    '/WeatherApp/precache-manifest.7a4ddeabf59f022db7cc1b8f76540703.js'
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/WeatherApp/index.html", {
-  
-  blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
+workbox.routing.registerNavigationRoute('/WeatherApp/index.html', {
+
+    blacklist: [/^\/_/, /\/[^\/]+\.[^\/]+$/],
 });

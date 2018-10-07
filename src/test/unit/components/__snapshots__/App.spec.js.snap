@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components App renders without crashing 1`] = `
+<div
+  className="mainContainer"
+>
+  <header
+    className="header"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="logo"
+        href="/"
+        title="Weather Around the World"
+      >
+        Weather Around the World
+      </a>
+    </div>
+  </header>
+  <div
+    className="container"
+  >
+    <div
+      className="col-md-12"
+    >
+      <h3>
+        Select a city
+      </h3>
+    </div>
+    <div
+      className="col-md-12"
+    >
+      <div>
+        <a
+          href="#/Amsterdam"
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-light"
+            type="button"
+          >
+            Amsterdam
+          </button>
+        </a>
+        <a
+          href="#/Moscow"
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-light"
+            type="button"
+          >
+            Moscow
+          </button>
+        </a>
+        <a
+          href="#/Kiev"
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-light"
+            type="button"
+          >
+            Kiev
+          </button>
+        </a>
+        <a
+          href="#/Uzhhorod"
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-light"
+            type="button"
+          >
+            Uzhhorod
+          </button>
+        </a>
+        <a
+          href="#/Prague"
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-light"
+            type="button"
+          >
+            Prague
+          </button>
+        </a>
+        <a
+          href="#/Santa Cruz"
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-light"
+            type="button"
+          >
+            Santa Cruz
+          </button>
+        </a>
+        <a
+          href="#/Honolulu"
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-light"
+            type="button"
+          >
+            Honolulu
+          </button>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div
+        className="col-md-12"
+      >
+        <div>
+          Loading
+          <sup>
+            *
+          </sup>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <div
+      className="container"
+    >
+      © 2018 Wether app by Pavel Klochkov.
+    </div>
+  </footer>
+</div>
+`;

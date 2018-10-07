@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components App renders without crashing 1`] = `
+<div>
+  Loading
+  <sup>
+    *
+  </sup>
+</div>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components App renders without crashing 1`] = `
+<div>
+  *Because of http source at api.openweathermap.org you could allow to load resources from unsecure places to let the WeatherApp work.
+</div>
+`;
