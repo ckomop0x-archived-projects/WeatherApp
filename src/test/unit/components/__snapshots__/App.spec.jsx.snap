@@ -5,112 +5,102 @@ exports[`Components App renders without crashing 1`] = `
   className="mainContainer"
 >
   <header
-    className="header"
+    className="MuiPaper-root-11 MuiPaper-elevation4-17 MuiAppBar-root-2 MuiAppBar-positionFixed-3 MuiAppBar-colorPrimary-9 mui-fixed Header-header-1"
   >
     <div
-      className="container"
+      className="MuiToolbar-root-38 MuiToolbar-regular-40 MuiToolbar-gutters-39"
     >
-      <a
-        className="logo"
-        href="/"
-        title="Weather Around the World"
+      <h1
+        className="MuiTypography-root-42 MuiTypography-headline-47 MuiTypography-colorInherit-71"
       >
         Weather Around the World
-      </a>
+      </h1>
     </div>
   </header>
   <div
-    className="container"
+    className="container content"
   >
-    <div
-      className="col-md-12"
-    >
-      <h3>
-        Select a city
-      </h3>
-    </div>
-    <div
-      className="col-md-12"
-    >
-      <div>
-        <a
-          href="#/Amsterdam"
-          onClick={[Function]}
+    <h3>
+      Select a city
+    </h3>
+    <div>
+      <a
+        href="#/Amsterdam"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-light"
+          type="button"
         >
-          <button
-            className="btn btn-light"
-            type="button"
-          >
-            Amsterdam
-          </button>
-        </a>
-        <a
-          href="#/Moscow"
-          onClick={[Function]}
+          Amsterdam
+        </button>
+      </a>
+      <a
+        href="#/Moscow"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-light"
+          type="button"
         >
-          <button
-            className="btn btn-light"
-            type="button"
-          >
-            Moscow
-          </button>
-        </a>
-        <a
-          href="#/Kiev"
-          onClick={[Function]}
+          Moscow
+        </button>
+      </a>
+      <a
+        href="#/Kiev"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-light"
+          type="button"
         >
-          <button
-            className="btn btn-light"
-            type="button"
-          >
-            Kiev
-          </button>
-        </a>
-        <a
-          href="#/Uzhhorod"
-          onClick={[Function]}
+          Kiev
+        </button>
+      </a>
+      <a
+        href="#/Uzhhorod"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-light"
+          type="button"
         >
-          <button
-            className="btn btn-light"
-            type="button"
-          >
-            Uzhhorod
-          </button>
-        </a>
-        <a
-          href="#/Prague"
-          onClick={[Function]}
+          Uzhhorod
+        </button>
+      </a>
+      <a
+        href="#/Prague"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-light"
+          type="button"
         >
-          <button
-            className="btn btn-light"
-            type="button"
-          >
-            Prague
-          </button>
-        </a>
-        <a
-          href="#/Santa Cruz"
-          onClick={[Function]}
+          Prague
+        </button>
+      </a>
+      <a
+        href="#/Santa Cruz"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-light"
+          type="button"
         >
-          <button
-            className="btn btn-light"
-            type="button"
-          >
-            Santa Cruz
-          </button>
-        </a>
-        <a
-          href="#/Honolulu"
-          onClick={[Function]}
+          Santa Cruz
+        </button>
+      </a>
+      <a
+        href="#/Honolulu"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-light"
+          type="button"
         >
-          <button
-            className="btn btn-light"
-            type="button"
-          >
-            Honolulu
-          </button>
-        </a>
-      </div>
+          Honolulu
+        </button>
+      </a>
     </div>
     <div>
       <div
@@ -131,7 +121,7 @@ exports[`Components App renders without crashing 1`] = `
     <div
       className="container"
     >
-      © 2018 Wether app by Pavel Klochkov.
+      © 2017-2019 Weather app by Pavel Ckomop0x Klochkov.
     </div>
   </footer>
 </div>
