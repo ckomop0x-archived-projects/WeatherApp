@@ -25,10 +25,7 @@ const App = () => {
           </div>
           <Switch>
             <Route exact path="/" render={() => <Home city='amsterdam'/>}/>
-            <Route path="/:city" render={({match}) => {
-              const {city} = match.params;
-              return <Home city={city}/>
-            }}/>
+            <Route path="/:city" render={({match}) => <Home city={match.params.city}/>}/>
           </Switch>
         </div>
         <Footer footerTitle="&copy; 2017-2019 Weather app by Pavel Ckomop0x Klochkov."/>
