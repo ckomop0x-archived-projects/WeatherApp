@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {urlMaker} from '../services/url-maker';
+import CityCard from './CityCard'
 
 class WeatherDisplay extends Component {
     constructor (props) {
@@ -42,20 +43,7 @@ class WeatherDisplay extends Component {
 
             return (
                 <div>
-                    <div className="card" style={{width: 400, marginTop: 32}}>
-                        {/*<img className="card-img-top" src="https://funtime.kiev.ua/uploads/img/gallery/big/2016/10/uzhgorod-uzhgorod-ukraina-uzhgorodskij-zamok-uzhgorodskaya-oblast-uzhgorod-dostoprimechatelnosti-uzh-57fb1d4ceb34d.jpg"*/}
-                             {/*alt={weatherData.name} />*/}
-                            <div className="card-body">
-                                <h5 className="card-title">{weatherData.name}</h5>
-                                <p className="card-text">{weather.main} <img src={iconUrl} alt={weatherData.description}/></p>
-                            </div>
-                            <ul className="list-group list-group-flush">
-                                <li className="list-group-item">Current: {weatherData.main.temp}°</li>
-                                <li className="list-group-item">High: {weatherData.main.temp_max}°</li>
-                                <li className="list-group-item">Low: {weatherData.main.temp_min}°</li>
-                                <li className="list-group-item">Wind Speed: {weatherData.wind.speed} mi/hr</li>
-                            </ul>
-                    </div>
+                    <CityCard weatherData={weatherData}/>
                 </div>
             );
         }
