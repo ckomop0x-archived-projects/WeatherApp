@@ -1,11 +1,11 @@
 import React from 'react';
 import "./footer.css"
 
-const Footer = props => {
+const Footer = ({footerTitle}) => {
     return (
         <footer className="footer">
             <div className="container">
-              {props.footerTitle}
+              {footerTitle}
             </div>
         </footer>
     )
