@@ -8,6 +8,7 @@
     "enzyme-to-json": "^3.3.5",
     "gh-pages": "^2.0.1",
     "ghooks": "2.0.4",
+    "puppeteer": "1.14.0",
     "react-addons-test-utils": "^15.6.2",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
