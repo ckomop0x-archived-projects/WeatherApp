@@ -1,5 +1,6 @@
 export const PLACES = [
     {name: 'Amsterdam'},
+    {name: 'Rotterdam'},
     {name: 'Moscow'},
     {name: 'Kiev'},
     {name: 'Uzhhorod'},

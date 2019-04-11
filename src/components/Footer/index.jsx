@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import "./footer.css"
 
 const Footer = ({footerTitle}) => {
@@ -11,5 +12,8 @@ const Footer = ({footerTitle}) => {
     )
 };
 
+Footer.propTypes = {
+  footerTitle: PropTypes.string.isRequired
+}
 
 export default Footer;

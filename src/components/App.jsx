@@ -5,6 +5,7 @@ import Footer from './Footer/index';
 import { PLACES } from '../helpers/places';
 import Home from './Home';
 import './app.css';
+import CitySelector from './CitySelector';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
               )
             )}
           </div>
+          {/*<CitySelector/>*/}
           <Switch>
             <Route exact path="/" render={() => <Home city='amsterdam'/>}/>
             <Route path="/:city" render={({match}) => <Home city={match.params.city}/>}/>

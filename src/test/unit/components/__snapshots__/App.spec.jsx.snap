@@ -36,6 +36,17 @@ exports[`Components App renders without crashing 1`] = `
         </button>
       </a>
       <a
+        href="#/Rotterdam"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-light"
+          type="button"
+        >
+          Rotterdam
+        </button>
+      </a>
+      <a
         href="#/Moscow"
         onClick={[Function]}
       >

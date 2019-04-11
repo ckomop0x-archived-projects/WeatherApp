@@ -42,7 +42,7 @@ function CityCard(props) {
               <li className="list-group-item">Current: {main.temp}°</li>
               <li className="list-group-item">High: {main.temp_max}°</li>
               <li className="list-group-item">Low: {main.temp_min}°</li>
-              <li className="list-group-item">Wind Speed: {wind.speed} mi/hr</li>
+            {/*{wind && wind.speed ? <li className="list-group-item">Wind Speed: {wind.speed} mi/hr</li> : null}*/}
           </Typography>
         </CardContent>
       </CardActionArea>
