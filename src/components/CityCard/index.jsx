@@ -20,10 +20,9 @@ const styles = {
 };
 
 function CityCard(props) {
-  const { classes, weatherData } = props;
-  const { name, main } = weatherData
+  const { classes, weatherData: { name, main, wind } } = props;
 
-  console.log(weatherData)
+  console.log(props.weatherData)
 
   return (
     <Card className={classes.card}>
@@ -42,7 +41,7 @@ function CityCard(props) {
               <li className="list-group-item">Current: {main.temp}°</li>
               <li className="list-group-item">High: {main.temp_max}°</li>
               <li className="list-group-item">Low: {main.temp_min}°</li>
-            {/*{wind && wind.speed ? <li className="list-group-item">Wind Speed: {wind.speed} mi/hr</li> : null}*/}
+              <li className="list-group-item">Wind Speed: {wind.speed} mi/hr</li>
           </Typography>
         </CardContent>
       </CardActionArea>
