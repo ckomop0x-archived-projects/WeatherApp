@@ -38,9 +38,6 @@ class WeatherDisplay extends Component {
                 <div>Loading<sup>*</sup></div>
             );
         } else {
-            const weather = weatherData.weather[0];
-            const iconUrl = 'http://openweathermap.org/img/w/' + weather.icon + '.png';
-
             return (
                 <div>
                     <CityCard weatherData={weatherData}/>
