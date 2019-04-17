@@ -21,7 +21,6 @@ const styles = {
 
 function CityCard(props) {
   const { classes, weatherData: { name, main, wind } } = props;
-
   console.log(props.weatherData)
 
   return (
@@ -35,7 +34,6 @@ function CityCard(props) {
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {name}
-
           </Typography>
           <Typography component="ul" className="list-group list-group-flush">
               <li className="list-group-item">Current: {main.temp}°</li>

@@ -1,12 +1,10 @@
 import React from 'react';
 import WeatherDisplay from './WeatherDisplay';
 
-const Home = (props) => {
+const Home = ({city}) => {
     return (
         <div>
-            <div className="col-md-12">
-                <WeatherDisplay city={props.city}/>
-            </div>
+          <WeatherDisplay city={city}/>
         </div>
     )
 };
