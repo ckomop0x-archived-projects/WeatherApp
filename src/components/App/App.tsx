@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import Header from './Header/index';
-import Footer from './Footer/index';
-import { PLACES } from '../helpers/places';
-import Home from './Home';
+import { Header } from '../../components';
+import Footer from '../Footer';
+import { PLACES } from '../../helpers/places';
+import Home from '../Home';
 import './app.css';
 
-const App = () => {
+const App: FunctionComponent = () => {
   return (
     <Router>
       <div className="mainContainer">
