@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {urlMaker} from '../services/url-maker';
 import CityCard from './CityCard'
+import CircularIndeterminate from '../components/Loader/Loader'
 
 class WeatherDisplay extends Component {
     constructor (props) {
@@ -35,7 +36,7 @@ class WeatherDisplay extends Component {
 
         if (!weatherData) {
             return (
-                <div>Loading<sup>*</sup></div>
+                <CircularIndeterminate />
             );
         } else {
             return (
