@@ -1,0 +1,42 @@
+{
+	"tabWidth": 2,
+	"printWidth": 100,
+	"useTabs": false,
+	"semi": false,
+	"singleQuote": true,
+	"trailingComma": "es5",
+	"bracketSpacing": true,
+	"jsxBracketSameLine": false,
+	"arrowParens": "avoid",
+	"overrides": [
+		{
+			"files": "*.ts*",
+			"parser": "typescript",
+			"tabWidth": "2",
+			"printWidth": 100,
+			"useTabs": false,
+			"semi": false
+		},
+		{
+			"files": "*d.ts*",
+			"parser": "typescript",
+			"tabWidth": "2",
+			"printWidth": 100,
+			"useTabs": false,
+			"semi": false
+		},
+		{
+			"files": "*.scss",
+			"parser": "scss",
+			"options": {
+				"semi": true,
+				"singleQuote": false
+			}
+		},
+		{
+			"files": "*.json",
+			"useTabs": false,
+			"tabWidth": 2
+		}
+	]
+}

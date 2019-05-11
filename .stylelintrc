@@ -1,0 +1,43 @@
+{
+  "plugins": [
+    "stylelint-declaration-strict-value",
+    "stylelint-scss",
+    "stylelint-prettier"
+  ],
+  "rules": {
+    "prettier/prettier": true,
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["function", "if", "each", "include", "mixin", "extend"]
+    }],
+    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-before": "always",
+    "block-opening-brace-newline-after": "always",
+    "color-no-invalid-hex": true,
+    "color-named": "never",
+    "color-hex-case": "lower",
+    "comment-whitespace-inside": "always",
+    "declaration-colon-space-after": "always-single-line",
+    "function-max-empty-lines": 1,
+    "function-name-case": "lower",
+    "function-url-quotes": "always",
+    "function-whitespace-after": "always",
+    "length-zero-no-unit": true,
+    "max-line-length": 120,
+    "scale-unlimited/declaration-strict-value": ["/color/", "font-size"],
+    "no-extra-semicolons": true,
+    "number-no-trailing-zeros": true,
+    "rule-empty-line-before": ["always", {
+      "except": ["after-single-line-comment", "first-nested"]
+    }],
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["global"]
+    }],
+    "shorthand-property-no-redundant-values": true,
+    "unit-case": "lower"
+  },
+  "extends": [
+    "stylelint-config-standard",
+    "prettier-stylelint",
+    "stylelint-config-prettier"
+  ]
+}
