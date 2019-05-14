@@ -6,6 +6,7 @@ import { PLACES } from '../../helpers/places';
 import Home from '../Home';
 import { styled } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
+import { useTranslation, Trans } from "react-i18next";
 import './app.css';
 
 const ButtonStyled = styled(Button)({
@@ -23,13 +24,19 @@ const NavLinkStyled = styled(NavLink)({
 })
 
 const App: FunctionComponent = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <Router>
       <div className="mainContainer">
-        <Header title="Weather Around the World"/>
+        <Header title={t('page.title')} changeLanguage={changeLanguage}/>
         <div className="container content">
-          <h3>Select a city</h3>
+          {/*<Trans i18nKey="welcome">trans</Trans>*/}
+          <h3>{t('Select a city')}</h3>
           <div>
             {PLACES.map((place, index) => (
                 <NavLinkStyled key={index} to={`${place.name}`}>
