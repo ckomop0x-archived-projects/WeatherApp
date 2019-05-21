@@ -8,18 +8,23 @@
   "devDependencies": {
     "commitizen": "3.1.1",
     "cypress": "3.2.0",
+    "cypress-istanbul": "1.2.0",
     "cypress-react-unit-test": "2.4.1",
     "cz-conventional-changelog": "2.1.0",
     "enzyme": "^3.9.0",
     "enzyme-to-json": "^3.3.5",
     "gh-pages": "^2.0.1",
     "ghooks": "2.0.4",
+    "istanbul-lib-coverage": "2.0.5",
     "lint-staged": "8.1.6",
+    "nyc": "14.1.1",
     "puppeteer": "1.14.0",
     "react-addons-test-utils": "^15.6.2",
     "react-router-dom": "5.0.0",
     "react-scripts": "2.1.8",
-    "semantic-release": "15.13.12"
+    "semantic-release": "15.13.12",
+    "source-map-support": "0.5.12",
+    "ts-node": "8.1.0"
   },
   "dependencies": {
     "@material-ui/core": "3.9.3",
@@ -52,7 +57,8 @@
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint:write": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "cypress:run": "cypress run",
+    "report:coverage": "nyc --reporter=lcov --reporter=text-summary npm run cypress:run",
     "eject": "react-scripts eject",
     "test:coverage": "react-scripts test --coverage",
     "predeploy": "yarn build",
@@ -86,5 +92,28 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx",
+      ".js",
+      ".jsx"
+    ],
+    "include": [
+      "src/**/*.js",
+      "src/**/*.jsx",
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "exclude": [
+      "src/**/*.d.ts",
+      "src/**/*.test.ts",
+      "src/**/*.test.tsx"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  }
 }
