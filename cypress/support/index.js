@@ -16,6 +16,10 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import 'cypress-react-unit-test'
+import 'cypress-istanbul/support'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+module.exports = (on, config) => {
+  on('task', require('cypress-istanbul/task'))
+}

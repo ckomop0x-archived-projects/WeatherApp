@@ -3,7 +3,7 @@ import WeatherDisplay from './WeatherDisplay';
 
 const Home = ({city}) => {
     return (
-        <div>
+        <div data-cy="homeComponent">
           <WeatherDisplay city={city}/>
         </div>
     )
