@@ -6,7 +6,7 @@ import { PLACES } from '../../helpers/places';
 import Home from '../Home';
 import { styled } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import './app.css';
 
 const ButtonStyled = styled(Button)({
@@ -35,7 +35,6 @@ const App: FunctionComponent = () => {
       <div className="mainContainer">
         <Header title={t('page.title')} changeLanguage={changeLanguage}/>
         <div className="container content">
-          {/*<Trans i18nKey="welcome">trans</Trans>*/}
           <h3>{t('Select a city')}</h3>
           <div>
             {PLACES.map((place, index) => (
