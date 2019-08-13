@@ -24,6 +24,6 @@ jobs:
         git config user.name
         git remote remove origin
         git remote -v
-        git remote add origin 'https://${{ secrets.DEPLOY_KEY }}@github.com/ckomop0x/WeatherApp.git'
+        git remote add origin 'https://github.com/ckomop0x/WeatherApp.git'
         yarn install
         yarn deploy
