@@ -26,5 +26,4 @@ jobs:
         git remote -v
         git remote add origin 'https://${{ secrets.DEPLOY_KEY }}@github.com/ckomop0x/WeatherApp.git'
         yarn install
-        NODE_DEBUG=gh-pages
         yarn deploy

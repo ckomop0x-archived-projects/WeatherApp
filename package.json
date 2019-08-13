@@ -62,7 +62,7 @@
     "eject": "react-scripts eject",
     "test:coverage": "react-scripts test --coverage",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build --silent"
+    "deploy": "gh-pages -d build"
   },
   "config": {
     "commitizen": {
