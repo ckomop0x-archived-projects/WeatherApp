@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Add github credentials
+      run: |
+        git config --global user.email "paul.klochkov@gmail.com"
+        git config --global user.name "Pavel Klochkov"
     - uses: actions/checkout@master
     - name: Use Node.js 12.x
       uses: actions/setup-node@v1
