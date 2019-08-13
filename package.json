@@ -62,7 +62,7 @@
     "eject": "react-scripts eject",
     "test:coverage": "react-scripts test --coverage",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build --repo https://github.com/ckomop0x/WeatherApp.git --user paul.klochkov@gmail.com"
   },
   "config": {
     "commitizen": {
