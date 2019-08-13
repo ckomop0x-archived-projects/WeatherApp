@@ -20,7 +20,9 @@ jobs:
     - name: Install and configure gh-pages & deploy
       run: |
         echo yarn install
-        echo git remote
-        git config --global user.email "paul.klochkov@gmail.com"
-        git config --global user.name "Pavel Klochkov"
+        git config user.email "paul.klochkov@gmail.com"
+        git config user.name "Pavel Klochkov"
+        git remote -v
+        git config user.email
+        git config user.name
         echo yarn deploy
