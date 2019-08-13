@@ -1,7 +1,6 @@
 name: Deploy app
 
-on:
-  push:
+on: push
 
 push:
   branches:    # Array of patterns that match refs/heads
