@@ -53,7 +53,7 @@
     "start": "PORT=9101 react-scripts start",
     "commit": "git-cz",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage --watchAll",
+    "test": "CI=true react-scripts test --env=jsdom --coverage",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint:write": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",

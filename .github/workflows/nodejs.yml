@@ -1,19 +1,43 @@
-name: Node CI
+name: Install and Test
 
-on: 
+on:
   pull_request:
 
 jobs:
+  install:
+    runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@master
+        - name: Use Node.js 12.x
+          uses: actions/setup-node@v1
+          with:
+            version: 12.x
+        - name: yarn install
+          run: yarn install
+
   build:
     runs-on: ubuntu-latest
-    
+
+    needs: install
     steps:
     - uses: actions/checkout@master
     - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
         version: 12.x
-    - name: npm install, build, and test
-      run: |
-        yarn install
-        yarn run build --if-present  
+    - name: yarn build
+      run: yarn build
+
+  test:
+    runs-on: ubuntu-latest
+
+    needs: install
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          version: 12.x
+      - name: yarn test
+        run: yarn test
