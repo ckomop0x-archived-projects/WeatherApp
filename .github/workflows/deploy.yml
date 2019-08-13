@@ -19,7 +19,6 @@ jobs:
 
     - name: Install and configure gh-pages & deploy
       run: |
-        echo yarn install
         git config user.email "paul.klochkov@gmail.com"
         git config user.name "Pavel Klochkov"
         git remote remove origin
@@ -28,4 +27,5 @@ jobs:
         git remote -v
         git config user.email
         git config user.name
-        echo yarn deploy
+        yarn install
+        yarn deploy
