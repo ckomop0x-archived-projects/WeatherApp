@@ -27,4 +27,5 @@ jobs:
         git remote -v
         git config user.email
         git config user.name
-        yarn install
+        yarn instal
+        git subtree push --prefix build origin gh-pages
