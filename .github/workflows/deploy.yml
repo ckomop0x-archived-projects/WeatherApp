@@ -19,8 +19,8 @@ jobs:
 
     - name: Install and configure gh-pages & deploy
       run: |
-        yarn install
-        git remote add origin git@github.com:ckomop0x/WeatherApp.git
+        echo yarn install
+        echo git remote
         git config --global user.email "paul.klochkov@gmail.com"
         git config --global user.name "Pavel Klochkov"
-        yarn deploy
+        echo yarn deploy
