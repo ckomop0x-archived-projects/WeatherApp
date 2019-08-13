@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Add github credentials
+    - name: Install and configure gh-pages
       run: |
-        git remote set-url https://ckomop0x:${{secrets.GITHUB_PASSWORD}}@github.com/ckomop0x/WeatherApp.git
+        npm install -g --silent gh-pages@2.0.1
         git config --global user.email "paul.klochkov@gmail.com"
         git config --global user.name "Pavel Klochkov"
     - uses: actions/checkout@master
