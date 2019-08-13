@@ -20,16 +20,20 @@ jobs:
       run: |
         git config user.email "paul.klochkov@gmail.com"
         git config user.name "Pavel Klochkov"
-        git remote remove origin
-        git remote -v
-        git remote add origin git@github.com:ckomop0x/WeatherApp.git
-        git remote -v
+#        git remote remove origin
+#        git remote -v
+#        git remote add origin git@github.com:ckomop0x/WeatherApp.git
+#        git remote -v
         git config user.email
         git config user.name
         yarn install
-        yarn build
-    - name: GH Pages deploy
-      uses: Cecilapp/GitHub-Pages-deploy@1.1.0
-      env:
-        BUILD_DIR: build/
-        EMAIL: paul.klochkov@gmail.com
+#        yarn build
+#    - name: GH Pages deploy
+#      uses: Cecilapp/GitHub-Pages-deploy@1.1.0
+#      env:
+#        BUILD_DIR: build/
+#        EMAIL: paul.klochkov@gmail.com
+    - add_ssh_keys:
+        fingerprints: 91:b6:53:e6:06:b7:82:cb:b5:a3:0e:eb:29:dd:41:36
+    - name: GH-pages deploy
+      run: yarn deploy
