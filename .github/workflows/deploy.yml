@@ -30,7 +30,7 @@ jobs:
         yarn install
     - name: GH Pages deploy
       uses: Cecilapp/GitHub-Pages-deploy@1.1.0
-      env:
-        BUILD_DIR: "build/"       # "_site/" by default
-        EMAIL: "paul.klochkov@gmail.com" # must be a verifed email
-      secrets: ${{semantic-release-starwars-names-b6gg2m8}}
+        env:
+          BUILD_DIR: "build/"       # "_site/" by default
+          EMAIL: "paul.klochkov@gmail.com" # must be a verifed email
+        secrets: ${{semantic-release-starwars-names-b6gg2m8}}
