@@ -33,4 +33,3 @@ jobs:
       env:
         BUILD_DIR: build/
         EMAIL: paul.klochkov@gmail.com
-      secrets: '123'
