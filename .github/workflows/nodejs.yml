@@ -16,5 +16,4 @@ jobs:
     - name: npm install, build, and test
       run: |
         yarn install
-        yarn test
         yarn run build --if-present        
