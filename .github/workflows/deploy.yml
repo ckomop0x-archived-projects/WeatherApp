@@ -1,10 +1,9 @@
 name: Deploy app
 
-on: push
-
-push:
-  branches:    # Array of patterns that match refs/heads
-    - master
+on:
+  push:
+    branches:    # Array of patterns that match refs/heads
+      - master
 
 jobs:
   build:

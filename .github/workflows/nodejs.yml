@@ -3,18 +3,6 @@ name: Install and Test
 on: pull_request
 
 jobs:
-  install:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@master
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          version: 12.x
-      - name: yarn install
-        run: yarn install
-
   build:
     runs-on: ubuntu-latest
 
@@ -25,8 +13,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         version: 12.x
-    - name: yarn build
-      run: yarn build
+    - name: yarn install & build
+      run: |
+        yarn install
+        yarn build
 
   test:
     runs-on: ubuntu-latest
@@ -38,5 +28,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           version: 12.x
-      - name: yarn test
-        run: yarn test
+      - name: yarn install & test
+        run: |
+          yarn install
+          yarn test
