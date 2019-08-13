@@ -12,6 +12,7 @@ jobs:
     steps:
     - name: Add github credentials
       run: |
+        git remote set-url https://ckomop0x:{{secrets.GITHUB_PASSWORD}}@github.com/ckomop0x/WeatherApp.git
         git config --global user.email "paul.klochkov@gmail.com"
         git config --global user.name "Pavel Klochkov"
     - uses: actions/checkout@master
