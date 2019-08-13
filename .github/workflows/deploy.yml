@@ -10,20 +10,55 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
+      - uses: actions/checkout@master
+      - name: is-not-branch-deleted
+        uses: actions/bin/filter@master
+        with:
+          args: not deleted
+      - name: is-branch-master
+        uses: actions/bin/filter@master
+        with:
+          args: branch master
+      - uses: actions/checkout@master
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          version: 12.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install and configure gh-pages & deploy
+        run: |
+          git config user.email "paul.klochkov@gmail.com"
+          git config user.name "Pavel Klochkov"
+          git config user.email
+          git config user.name
+          git remote remove origin
+          git remote -v
+          git remote add origin 'https://github.com/ckomop0x/WeatherApp.git'
+          yarn install
+          yarn build
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./public
 
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        version: 12.x
-    - name: Install and configure gh-pages & deploy
-      run: |
-        git config user.email "paul.klochkov@gmail.com"
-        git config user.name "Pavel Klochkov"
-        git config user.email
-        git config user.name
-        git remote remove origin
-        git remote -v
-        git remote add origin 'https://github.com/ckomop0x/WeatherApp.git'
-        yarn install
-        yarn run gh-pages -d build -b gh-pages -u "github-actions-bot <support+actions@github.com>"
+#    steps:
+#    - uses: actions/checkout@master
+#
+#    - name: Use Node.js 12.x
+#      uses: actions/setup-node@v1
+#      with:
+#        version: 12.x
+#        repo-token: ${{ secrets.GITHUB_TOKEN }}
+#    - name: Install and configure gh-pages & deploy
+#      run: |
+#        git config user.email "paul.klochkov@gmail.com"
+#        git config user.name "Pavel Klochkov"
+#        git config user.email
+#        git config user.name
+#        git remote remove origin
+#        git remote -v
+#        git remote add origin 'https://github.com/ckomop0x/WeatherApp.git'
+#        yarn install
+#        yarn run gh-pages -d build -b gh-pages -u "github-actions-bot <support+actions@github.com>"
