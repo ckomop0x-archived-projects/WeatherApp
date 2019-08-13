@@ -16,7 +16,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         version: 12.x
-
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Install and configure gh-pages & deploy
       run: |
         git config user.email "paul.klochkov@gmail.com"
@@ -27,5 +28,5 @@ jobs:
         git remote -v
         git config user.email
         git config user.name
-        yarn install
+#        yarn install
         git subtree add --prefix build origin gh-pages
