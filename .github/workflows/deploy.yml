@@ -16,10 +16,10 @@ jobs:
       with:
         version: 12.x
     - name: Install and configure gh-pages
-        run: |
-          yarn install -g --silent gh-pages@2.0.1
-          git config --global user.email "paul.klochkov@gmail.com"
-          git config --global user.name "Pavel Klochkov"
+      run: |
+        yarn install -g --silent gh-pages@2.0.1
+        git config --global user.email "paul.klochkov@gmail.com"
+        git config --global user.name "Pavel Klochkov"
     - name: npm install, build, and test
       run: |
         yarn install
