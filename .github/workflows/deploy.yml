@@ -31,5 +31,4 @@ jobs:
     - name: GH Pages deploy
       uses: Cecilapp/GitHub-Pages-deploy@1.1.0
         env:
-          BUILD_DIR: build/               # "_site/" by default
-          EMAIL: paul.klochkov@gmail.com  # must be a verifed email
+          BUILD_DIR: build/
