@@ -29,4 +29,3 @@ jobs:
         yarn install
     - name: GH Pages deploy
       uses: Cecilapp/GitHub-Pages-deploy@1.1.0
-        BUILD_DIR: build
