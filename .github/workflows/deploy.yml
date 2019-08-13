@@ -26,4 +26,4 @@ jobs:
         git remote -v
         git remote add origin 'https://github.com/ckomop0x/WeatherApp.git'
         yarn install
-        gh-pages -d build -b gh-pages -u "github-actions-bot <support+actions@github.com>"
+        yarn run gh-pages -d build -b gh-pages -u "github-actions-bot <support+actions@github.com>"
