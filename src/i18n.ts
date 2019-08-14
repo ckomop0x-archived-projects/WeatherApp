@@ -1,6 +1,7 @@
 import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
+import { en, nl } from './i18/translations'
 
 i18n
   .use(LanguageDetector)
@@ -8,24 +9,8 @@ i18n
   .init({
     // we init with resources
     resources: {
-      en: {
-        translations: {
-          'To get started, edit <1>src/App.js</1> and save to reload.':
-            'To get started, edit <1>src/App.js</1> and save to reload.',
-          'Welcome to React': 'Welcome to React and react-i18next',
-          'page.title': 'Weather Around the World',
-          'Select a city': 'Select a city',
-        },
-      },
-      nl: {
-        translations: {
-          'To get started, edit <1>src/App.js</1> and save to reload.':
-            'Starte in dem du, <1>src/App.js</1> editierst und speicherst.',
-          'Welcome to React': 'Willkommen bei React und react-i18next',
-          'page.title': 'Weer rond de wereld',
-          'Select a city': 'Kies een stad',
-        },
-      },
+      en,
+      nl,
     },
     fallbackLng: 'en',
     debug: true,
