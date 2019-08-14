@@ -4,9 +4,9 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 
 interface HeaderProps {
-  title: string;
+  title: string
 
-  changeLanguage(arg0: string): void;
+  changeLanguage(arg0: string): void
 }
 
 const Header: FunctionComponent<HeaderProps> = ({ title, changeLanguage }) => (
@@ -24,4 +24,3 @@ const Header: FunctionComponent<HeaderProps> = ({ title, changeLanguage }) => (
 )
 
 export default Header
-
